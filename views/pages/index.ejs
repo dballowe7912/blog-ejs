@@ -10,12 +10,12 @@
 				>
 					<div
 						class="featured-img"
-						style="background-image: url('images/img_2_horizontal.jpg')"
+						style="background-image: url(<%=blogs[0].image%>)"
 					></div>
 
 					<div class="text">
-						<span class="date">Apr. 14th, 2022</span>
-						<h2>AI can now kill those annoying cookie pop-ups</h2>
+						<span class="date"><%=blogs[0].date%></span>
+						<h2><%=blogs[0].title%></h2>
 					</div>
 				</a>
 				<a
@@ -24,12 +24,12 @@
 				>
 					<div
 						class="featured-img"
-						style="background-image: url('images/img_5_horizontal.jpg')"
+						style="background-image: url(<%=blogs[1].image%>)"
 					></div>
 
 					<div class="text">
-						<span class="date">Apr. 14th, 2022</span>
-						<h2>Don't assume your user data in the cloud is safe</h2>
+						<span class="date"><%=blogs[1].date%></span>
+						<h2><%=blogs[1].title%></h2>
 					</div>
 				</a>
 			</div>
@@ -40,12 +40,12 @@
 				>
 					<div
 						class="featured-img"
-						style="background-image: url('public/images/img_1_vertical.jpg')"
+						style="background-image: url(<%=blogs[2].image%>)"
 					></div>
 
 					<div class="text">
-						<span class="date">Apr. 14th, 2022</span>
-						<h2>Why is my internet so slow?</h2>
+						<span class="date"><%=blogs[2].date%></span>
+						<h2><%=blogs[2].title%></h2>
 					</div>
 				</a>
 			</div>
@@ -56,12 +56,12 @@
 				>
 					<div
 						class="featured-img"
-						style="background-image: url('images/img_3_horizontal.jpg')"
+						style="background-image: url(<%=blogs[3].image%>)"
 					></div>
 
 					<div class="text">
-						<span class="date">Apr. 14th, 2022</span>
-						<h2>Startup vs corporate: What job suits you best?</h2>
+						<span class="date"><%=blogs[3].date%></span>
+						<h2><%=blogs[3].title%></h2>
 					</div>
 				</a>
 				<a
@@ -70,21 +70,18 @@
 				>
 					<div
 						class="featured-img"
-						style="background-image: url('images/img_4_horizontal.jpg')"
+						style="background-image: url(<%=blogs[4].image%>)"
 					></div>
 
 					<div class="text">
-						<span class="date">Apr. 14th, 2022</span>
-						<h2>Thought you loved Python? Wait until you meet Rust</h2>
+						<span class="date"><%=blogs[4].date%></span>
+						<h2><%=blogs[4].title%></h2>
 					</div>
 				</a>
 			</div>
 		</div>
 	</div>
 </section>
-<!-- End retroy layout blog posts -->
-
-<!-- Start posts-entry -->
 <section class="section posts-entry">
 	<div class="container">
 		<div class="row mb-4">
@@ -109,7 +106,7 @@
 								class="img-link"
 							>
 								<img
-									src="/public/images/img_1_sq.jpg"
+									src="images/img_1_sq.jpg"
 									alt="Image"
 									class="img-fluid"
 								/>
@@ -241,7 +238,7 @@
 						class="img-link"
 					>
 						<img
-							src="public/images/img_1_horizontal.jpg"
+							src="images/img_1_horizontal.jpg"
 							alt="Image"
 							class="img-fluid"
 						/>
@@ -372,7 +369,7 @@
 								class="img-link"
 							>
 								<img
-									src="public/images/img_1_sq.jpg"
+									src="images/img_1_sq.jpg"
 									alt="Image"
 									class="img-fluid"
 								/>
@@ -792,7 +789,7 @@
 						href="/single"
 						class="img-link"
 						><img
-							src="public/images/img_1_horizontal.jpg"
+							src="images/img_1_horizontal.jpg"
 							alt="Image"
 							class="img-fluid"
 					/></a>
