@@ -19,6 +19,7 @@ const catchAsync = require("./utils/catchAsync");
 // routers
 const homeRoutes = require("./routes/homeRoutes");
 const userRoutes = require("./routes/userRoutes");
+const blogRoutes = require("./routes/blogRoutes");
 
 // global variables
 const PORT = process.env.PORT || 3000;
@@ -51,8 +52,21 @@ const app = express();
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+// app.use(express.static(path.join(__dirname, "public")));
+app.use("*/css", express.static(path.join(__dirname, "public/css")));
+app.use(
+	"*/fonts/flaticon/*",
+	express.static(path.join(__dirname, "public/fonts"))
+);
+app.use(
+	"*/fonts/icomoon/*",
+	express.static(path.join(__dirname, "public/fonts"))
+);
+app.use("*/images", express.static(path.join(__dirname, "public/images")));
+app.use("*/js", express.static(path.join(__dirname, "public/js")));
+app.use("*/scss", express.static(path.join(__dirname, "public/scss")));
 
 app.use(session(sessionConfig));
 app.use(passport.initialize());
@@ -70,22 +84,11 @@ app.use((req, res, next) => {
 // Routes
 app.use("/", homeRoutes);
 app.use("/", userRoutes);
+app.use("/", blogRoutes);
 
 // TODO Finish creating route folder structures
 app.get("/about", (req, res) => {
 	res.render("pages/about", { title: "About Us" });
-});
-
-app.get("/single", (req, res) => {
-	res.render("pages/single", { title: "Single Blog" });
-});
-
-app.get("/blog", (req, res) => {
-	res.render("pages/blog", { title: "Blog" });
-});
-
-app.get("/category", (req, res) => {
-	res.render("pages/category", { title: "Category" });
 });
 
 app.get("/contact", (req, res) => {

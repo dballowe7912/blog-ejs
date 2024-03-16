@@ -20,6 +20,10 @@ const blogSchema = new Schema({
 	image: {
 		type: String,
 	},
+	category: {
+		type: String,
+	},
 });
-
+// TODO change images into an array
+// TODO hook up multer and cloudinary for images
 module.exports = mongoose.model("Blog", blogSchema);

@@ -24,6 +24,7 @@ const seedDB = async () => {
 			author: blogs[i].author,
 			date: blogs[i].date,
 			image: blogs[i].image,
+			category: blogs[i].category,
 		});
 		await b.save();
 	}

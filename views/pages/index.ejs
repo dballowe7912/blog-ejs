@@ -4,38 +4,26 @@
 	<div class="container">
 		<div class="row align-items-stretch retro-layout">
 			<div class="col-md-4">
+				<% for( let i = 0; i < 2; i++ ) { %>
 				<a
-					href="/single"
+					href="/single/<%=blogs[i]._id%>"
 					class="h-entry mb-30 v-height gradient"
 				>
 					<div
 						class="featured-img"
-						style="background-image: url(<%=blogs[0].image%>)"
+						style="background-image: url(<%=blogs[i].image%>)"
 					></div>
 
 					<div class="text">
-						<span class="date"><%=blogs[0].date%></span>
-						<h2><%=blogs[0].title%></h2>
+						<span class="date"><%=blogs[i].date%></span>
+						<h2><%=blogs[i].title%></h2>
 					</div>
 				</a>
-				<a
-					href="/single"
-					class="h-entry v-height gradient"
-				>
-					<div
-						class="featured-img"
-						style="background-image: url(<%=blogs[1].image%>)"
-					></div>
-
-					<div class="text">
-						<span class="date"><%=blogs[1].date%></span>
-						<h2><%=blogs[1].title%></h2>
-					</div>
-				</a>
+				<% } %>
 			</div>
 			<div class="col-md-4">
 				<a
-					href="/single"
+					href="/single/<%=blogs[2]._id%>"
 					class="h-entry img-5 h-100 gradient"
 				>
 					<div
@@ -50,34 +38,22 @@
 				</a>
 			</div>
 			<div class="col-md-4">
+				<% for( let i = 3; i < 5; i++ ) { %>
 				<a
-					href="/single"
+					href="/single/<%=blogs[i]._id%>"
 					class="h-entry mb-30 v-height gradient"
 				>
 					<div
 						class="featured-img"
-						style="background-image: url(<%=blogs[3].image%>)"
+						style="background-image: url(<%=blogs[i].image%>)"
 					></div>
 
 					<div class="text">
-						<span class="date"><%=blogs[3].date%></span>
-						<h2><%=blogs[3].title%></h2>
+						<span class="date"><%=blogs[i].date%></span>
+						<h2><%=blogs[i].title%></h2>
 					</div>
 				</a>
-				<a
-					href="/single"
-					class="h-entry v-height gradient"
-				>
-					<div
-						class="featured-img"
-						style="background-image: url(<%=blogs[4].image%>)"
-					></div>
-
-					<div class="text">
-						<span class="date"><%=blogs[4].date%></span>
-						<h2><%=blogs[4].title%></h2>
-					</div>
-				</a>
+				<% } %>
 			</div>
 		</div>
 	</div>
