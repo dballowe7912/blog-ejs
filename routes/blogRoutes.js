@@ -12,7 +12,6 @@ router.get("/blog", (req, res) => {
 	res.render("pages/blog", { title: "Blog" });
 });
 
-// Set as expanded view of selected blog
 router.get(
 	"/single/:id",
 	catchAsync(async (req, res) => {
