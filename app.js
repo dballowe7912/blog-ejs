@@ -1,5 +1,3 @@
-// dependencies
-// npm packages
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
@@ -8,7 +6,11 @@ const session = require("express-session");
 const dotenv = require("dotenv").config();
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
+
+// Models
 const User = require("./models/userModel");
+
+// Utils
 const ExpressError = require("./utils/ExpressError");
 
 // const MongoDBStore = require("connect-mongo")(session);
