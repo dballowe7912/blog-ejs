@@ -24,6 +24,11 @@ const blogSchema = new Schema({
 		type: String,
 	},
 });
+
 // TODO change images into an array
 // TODO hook up multer and cloudinary for images
+blogSchema.static("findByCategory", function (category) {
+	return this.find({ category });
+});
+
 module.exports = mongoose.model("Blog", blogSchema);

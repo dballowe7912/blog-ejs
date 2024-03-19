@@ -3,9 +3,13 @@ const router = express.Router();
 const catchAsync = require("../utils/catchAsync");
 const Blog = require("../models/blogModel");
 
-router.get("/category", (req, res) => {
-	res.render("blogs/category", { title: "Category" });
-});
+router.get(
+	"/category/:category",
+	catchAsync(async (req, res) => {
+		const blogs = await Blog.findByCategory(req.params.category);
+		res.render("blogs/category", { title: "Category", blogs });
+	})
+);
 
 // TODO set this as the main blog page, link to categories
 router.get("/blogs", (req, res) => {
