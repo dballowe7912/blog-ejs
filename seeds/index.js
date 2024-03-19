@@ -33,6 +33,7 @@ const seedDB = async () => {
 			username: users[i].username,
 			email: users[i].email,
 			password: users[i].password,
+			isAdmin: users[i].isAdmin,
 		});
 		await u.save();
 	}
