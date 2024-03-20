@@ -1,40 +1,5 @@
 <!-- TODO create partial to render blog links -->
-<!-- TODO create for loop for all blogs of category -->
 <!-- TODO captilize first letter of category -->
-<!-- <div class="blog-entry d-flex blog-entry-search-item">
-	<a
-		href="/single/<%=blogs[0]._id%>"
-		class="img-link me-4"
-	>
-		<img
-			src="images/img_1_sq.jpg"
-			alt="Image"
-			class="img-fluid"
-		/>
-	</a>
-	<div>
-		<span class="date"
-			><%=blogs[0].date%> &bullet;
-			<a href="#"><%=blogs[0].category%></a></span
-		>
-		<h2>
-			<a href="/single/<%=blogs[0]._id%>"><%=blogs[0].title%></a>
-		</h2>
-		<p>
-			TODO get first sentence of blogs body:
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-			nobis ea quis inventore vel voluptas.
-		</p>
-		<p>
-			<a
-				href="/single/<%=blogs[0]._id%>"
-				class="btn btn-sm btn-outline-primary"
-				>Read More</a
-			>
-		</p>
-	</div>
-</div> -->
-
 <% layout('layouts/boilerplate') %>
 <div class="section search-result-wrap">
 	<div class="container">
@@ -45,174 +10,42 @@
 		</div>
 		<div class="row posts-entry">
 			<div class="col-lg-8">
+				<% for( let i = 0; i < blogs.length; i++ ) { %>
 				<div class="blog-entry d-flex blog-entry-search-item">
 					<a
-						href="/single/<%=blogs[0]._id%>"
+						href="/single/<%=blogs[i]._id%>"
 						class="img-link me-4"
 					>
 						<img
-							src="<%=blogs[0].image%>"
+							src="<%=blogs[i].image%>"
 							alt="Image"
 							class="img-fluid"
 						/>
 					</a>
 					<div>
 						<span class="date"
-							><%=blogs[0].date%> &bullet;
-							<a href="#"><%=blogs[0].category%></a></span
+							><%=blogs[i].date%> &bullet;
+							<a href="/category/<%=blogs[i].category%>"
+								><%=blogs[i].category%></a
+							></span
 						>
 						<h2>
-							<a href="/single/<%=blogs[0]._id%>"><%=blogs[0].title%></a>
+							<a href="/single/<%=blogs[i]._id%>"><%=blogs[i].title%></a>
 						</h2>
-						<p><%=blogs[0].body%></p>
+						<p class="blog-entry-truncate"><%=blogs[i].body%></p>
 						<p>
 							<a
-								href="/single/<%=blogs[0]._id%>"
+								href="/single/<%=blogs[i]._id%>"
 								class="btn btn-sm btn-outline-primary"
 								>Read More</a
 							>
 						</p>
 					</div>
 				</div>
-
-				<div class="blog-entry d-flex blog-entry-search-item">
-					<a
-						href="single.html"
-						class="img-link me-4"
-					>
-						<img
-							src="images/img_2_sq.jpg"
-							alt="Image"
-							class="img-fluid"
-						/>
-					</a>
-					<div>
-						<span class="date"
-							>Apr. 14th, 2022 &bullet; <a href="#">Business</a></span
-						>
-						<h2>
-							<a href="single.html"
-								>Thought you loved Python? Wait until you meet Rust</a
-							>
-						</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-							nobis ea quis inventore vel voluptas.
-						</p>
-						<p>
-							<a
-								href="single.html"
-								class="btn btn-sm btn-outline-primary"
-								>Read More</a
-							>
-						</p>
-					</div>
-				</div>
-
-				<div class="blog-entry d-flex blog-entry-search-item">
-					<a
-						href="single.html"
-						class="img-link me-4"
-					>
-						<img
-							src="images/img_3_sq.jpg"
-							alt="Image"
-							class="img-fluid"
-						/>
-					</a>
-					<div>
-						<span class="date"
-							>Apr. 14th, 2022 &bullet; <a href="#">Business</a></span
-						>
-						<h2>
-							<a href="single.html"
-								>Thought you loved Python? Wait until you meet Rust</a
-							>
-						</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-							nobis ea quis inventore vel voluptas.
-						</p>
-						<p>
-							<a
-								href="single.html"
-								class="btn btn-sm btn-outline-primary"
-								>Read More</a
-							>
-						</p>
-					</div>
-				</div>
-
-				<div class="blog-entry d-flex blog-entry-search-item">
-					<a
-						href="single.html"
-						class="img-link me-4"
-					>
-						<img
-							src="images/img_4_sq.jpg"
-							alt="Image"
-							class="img-fluid"
-						/>
-					</a>
-					<div>
-						<span class="date"
-							>Apr. 14th, 2022 &bullet; <a href="#">Business</a></span
-						>
-						<h2>
-							<a href="single.html"
-								>Thought you loved Python? Wait until you meet Rust</a
-							>
-						</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-							nobis ea quis inventore vel voluptas.
-						</p>
-						<p>
-							<a
-								href="single.html"
-								class="btn btn-sm btn-outline-primary"
-								>Read More</a
-							>
-						</p>
-					</div>
-				</div>
-
-				<div class="blog-entry d-flex blog-entry-search-item">
-					<a
-						href="single.html"
-						class="img-link me-4"
-					>
-						<img
-							src="images/img_5_sq.jpg"
-							alt="Image"
-							class="img-fluid"
-						/>
-					</a>
-					<div>
-						<span class="date"
-							>Apr. 14th, 2022 &bullet; <a href="#">Business</a></span
-						>
-						<h2>
-							<a href="single.html"
-								>Thought you loved Python? Wait until you meet Rust</a
-							>
-						</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-							nobis ea quis inventore vel voluptas.
-						</p>
-						<p>
-							<a
-								href="single.html"
-								class="btn btn-sm btn-outline-primary"
-								>Read More</a
-							>
-						</p>
-					</div>
-				</div>
-
+				<% } %>
 				<div class="row text-start pt-5 border-top">
 					<div class="col-md-12">
+						<!-- TODO set up pagination for 5 articles per page -->
 						<div class="custom-pagination">
 							<span>1</span>
 							<a href="#">2</a>
