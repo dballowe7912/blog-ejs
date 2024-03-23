@@ -10,6 +10,7 @@ router.route("/home").get(
 		const gardening = await Blog.findByCategory("gardening");
 		const technology = await Blog.findByCategory("technology");
 		const conspiracy = await Blog.findByCategory("conspiracy");
+		const news = await Blog.findByCategory("news");
 		res.render("pages/index", {
 			title: "Home",
 			blogs,
@@ -17,6 +18,7 @@ router.route("/home").get(
 			gardening,
 			technology,
 			conspiracy,
+			news,
 		});
 	})
 );
