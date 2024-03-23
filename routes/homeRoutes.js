@@ -9,12 +9,14 @@ router.route("/home").get(
 		const pets = await Blog.findByCategory("pets");
 		const gardening = await Blog.findByCategory("gardening");
 		const technology = await Blog.findByCategory("technology");
+		const conspiracy = await Blog.findByCategory("conspiracy");
 		res.render("pages/index", {
 			title: "Home",
 			blogs,
 			pets,
 			gardening,
 			technology,
+			conspiracy,
 		});
 	})
 );

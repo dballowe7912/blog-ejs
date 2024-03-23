@@ -1,0 +1,36 @@
+<section class="section posts-entry posts-entry-sm bg-light">
+	<div class="container">
+		<div class="row">
+			<% for( let i = 0; i < 4; i++ ) { %>
+			<div class="col-md-6 col-lg-3">
+				<div class="blog-entry">
+					<a
+						href="/single/<%= conspiracy[i]._id %>"
+						class="img-link"
+					>
+						<img
+							src="<%= conspiracy[i].image %>"
+							alt="Image"
+							class="img-fluid"
+						/>
+					</a>
+					<span class="date"><%= conspiracy[i].date %></span>
+					<h2>
+						<a href="/single/<%= conspiracy[i]._id %>"
+							><%= conspiracy[i].title %>
+						</a>
+					</h2>
+					<p class="text-truncate"><%= conspiracy[i].body %></p>
+					<p>
+						<a
+							href="/single/<%= conspiracy[i]._id %>"
+							class="read-more"
+							>Continue Reading</a
+						>
+					</p>
+				</div>
+			</div>
+			<% } %>
+		</div>
+	</div>
+</section>
