@@ -13,6 +13,7 @@ const blogSchema = new Schema({
 	author: {
 		type: String,
 		required: true,
+		default: "Donald J Ballowe",
 	},
 	date: {
 		type: String,

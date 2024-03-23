@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/userModel");
 const catchAsync = require("../utils/catchAsync");
 
+// TODO create bio page and profile page
 // Login
 router.get("/login", (req, res) => {
 	res.render("pages/login", { title: "Login to Account" });

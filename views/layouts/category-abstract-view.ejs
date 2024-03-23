@@ -1,0 +1,79 @@
+<div class="section bg-light">
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-sm-6">
+				<h2 class="posts-entry-title">Featured Blogs</h2>
+			</div>
+			<div class="col-sm-6 text-sm-end">
+				<a
+					href="/blogs"
+					class="read-more"
+					>View All</a
+				>
+			</div>
+		</div>
+
+		<div class="row align-items-stretch retro-layout-alt">
+			<div class="col-md-5 order-md-2">
+				<a
+					href="/single/<%=pets[0]._id%>"
+					class="hentry img-1 h-100 gradient"
+				>
+					<div
+						class="featured-img"
+						style="background-image: url('images/img_2_vertical.jpg')"
+					></div>
+					<div class="text">
+						<span><%=pets[0].date%></span>
+						<h2><%=pets[0].title%></h2>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-md-7">
+				<a
+					href="/single/<%=pets[1]._id%>"
+					class="hentry img-2 v-height mb30 gradient"
+				>
+					<div
+						class="featured-img"
+						style="background-image: url('images/img_1_horizontal.jpg')"
+					></div>
+					<div class="text text-sm">
+						<span><%=pets[1].date%></span>
+						<h2><%=pets[1].title%></h2>
+					</div>
+				</a>
+
+				<div class="two-col d-block d-md-flex justify-content-between">
+					<a
+						href="/single/<%=pets[2]._id%>"
+						class="hentry v-height img-2 gradient"
+					>
+						<div
+							class="featured-img"
+							style="background-image: url('images/img_2_sq.jpg')"
+						></div>
+						<div class="text text-sm">
+							<span><%=pets[2].date%></span>
+							<h2><%=pets[2].title%></h2>
+						</div>
+					</a>
+					<a
+						href="/single/<%=pets[3]._id%>"
+						class="hentry v-height img-2 ms-auto float-end gradient"
+					>
+						<div
+							class="featured-img"
+							style="background-image: url('images/img_3_sq.jpg')"
+						></div>
+						<div class="text text-sm">
+							<span><%=pets[3].date%></span>
+							<h2><%=pets[3].title%></h2>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

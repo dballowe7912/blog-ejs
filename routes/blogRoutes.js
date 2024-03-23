@@ -12,9 +12,13 @@ router.get(
 );
 
 // TODO set this as the main blog page, link to categories
-router.get("/blogs", (req, res) => {
-	res.render("blogs/all", { title: "Blog" });
-});
+router.get(
+	"/blogs",
+	catchAsync(async (req, res) => {
+		const allBlogs = await Blog.find({});
+		res.render("blogs/all", { title: "Featured Blogs", allBlogs });
+	})
+);
 
 router.get(
 	"/single/:id",
@@ -27,6 +31,15 @@ router.get(
 // TODO create POST route to handle new blog creation
 router.get("/new", (req, res) =>
 	res.render("blogs/new", { title: "New Blog" })
+);
+
+router.post(
+	"/new",
+	catchAsync(async (req, res) => {
+		const blog = new Blog(req.body.blog);
+		await blog.save();
+		res.redirect(`/single/${blog._id}`);
+	})
 );
 
 module.exports = router;
