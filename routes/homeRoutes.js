@@ -8,7 +8,14 @@ router.route("/home").get(
 		const blogs = await Blog.find({});
 		const pets = await Blog.findByCategory("pets");
 		const gardening = await Blog.findByCategory("gardening");
-		res.render("pages/index", { title: "Home", blogs, pets, gardening });
+		const technology = await Blog.findByCategory("technology");
+		res.render("pages/index", {
+			title: "Home",
+			blogs,
+			pets,
+			gardening,
+			technology,
+		});
 	})
 );
 
